@@ -1,6 +1,20 @@
 "use client";
 
 export default function Hero() {
+    const skills = [
+    { src: "/public/express.png", alt: "Express.js" },
+    { src: "/public/mongodb.png", alt: "MongoDB" },
+    { src: "/public/nodejs.png", alt: "Node.js" },
+    { src: "/public/react.png", alt: "React" },
+    { src: "/public/python.png", alt: "Python" },
+    { src: "/public/figma.png", alt: "Figma" },
+    { src: "/public/html.png", alt: "HTML5" },
+    { src: "/public/css.png", alt: "CSS3" },
+    { src: "/public/js.png", alt: "JavaScript" },
+    { src: "/public/nextjs.png", alt: "Next.js" },
+    { src: "/public/tailwindcss.png", alt: "Tailwind CSS" },
+    { src: "/public/prisma.png", alt: "Prisma" },
+    ];
   return (
     <section className="w-full min-h-[calc(100vh-80px)] px-8 py-20">
       <div className="max-w-250 mx-auto w-full h-full flex flex-col justify-center gap-10">
