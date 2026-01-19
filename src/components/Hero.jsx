@@ -3,15 +3,23 @@
 export default function Hero() {
   return (
     <section className="w-full min-h-[calc(100vh-80px)] px-8 py-20">
-      <div className="max-w-7xl mx-auto w-full h-full flex flex-col justify-center gap-10">
+      <div className="max-w-250 mx-auto w-full h-full flex flex-col justify-center gap-10">
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-[auto_auto_1fr] gap-4">
 
           {/* LEFT */}
-          <div className="lg:col-span-3 lg:row-span-3 flex flex-col gap-4">
+          <div className="lg:col-span-3 lg:row-span-3 flex flex-col gap-2">
             <div className="bg-neutral-800 rounded-3xl p-8 flex-2">
-              building
+              <p className="text-gray-500 text-xs mb-2">A Web Devloper</p>
+              <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                Samiksha<br />Jangid
+              </h2>
+              <p className="text-gray-400 text-xs md:text-base italic leading-relaxed font-light">
+              a BTech CS & AI student building things on the web —
+              websites, apps, and whatever feels fun to create...
+              </p>
+              
             </div>
             <div className="bg-neutral-800 rounded-3xl p-8 flex-1">
               skills
