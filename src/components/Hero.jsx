@@ -21,7 +21,6 @@ export default function Hero() {
   return (
     <section className="w-full min-h-[calc(100vh-80px)] px-8 py-12">
       <div className="max-w-250 mx-auto w-full h-full flex flex-col justify-center gap-10">
-
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-[auto_auto_1fr] gap-2">
 
@@ -72,59 +71,60 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* CENTER TOP */}
-          <div className="lg:col-span-2 bg-neutral-800 rounded-3xl p-8 flex items-center justify-center">
-            <Image
-              src="/githubb.png"
-              alt="GitHub"
-              width={55}
-              height={55}
-              className="opacity-80"
-            />
-          </div>
+          {/* MIDDLE 2x2 SQUARES */}
+          <div className="lg:col-span-4 lg:row-span-2 grid grid-cols-2 grid-rows-2 gap-2">
+            <div className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square">
+              <Image
+                src="/githubb.png"
+                alt="GitHub"
+                width={56}
+                height={56}
+                className="object-contain opacity-80"
+              />
+            </div>
 
+            <div className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square">
+              <Image
+                src="/linkedin.png"
+                alt="LinkedIn"
+                width={56}
+                height={56}
+                className="object-contain opacity-80"
+              />
+            </div>
 
-          <div className="lg:col-span-2 bg-neutral-800 rounded-3xl p-8 flex items-center justify-center">
-            <Image
-              src="/linkedin.png"
-              alt="LinkedIn"
-              width={50}
-              height={50}
-              className="opacity-80"
-            />
-          </div>
-
-          {/* INTRO */}
-          <div className="lg:col-span-5 lg:row-span-2 bg-neutral-800 rounded-3xl p-8">
-            samiksha
-          </div>
-
-          {/* CENTER SECOND */}
-          <div className="lg:col-span-2">
             <a
-              href="/resume.pdf"    
+              href="/resume.pdf"
               download="Samiksha_Jangid_Resume.pdf"
-              className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center hover:opacity-90 transition"
+              className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square hover:opacity-90 transition"
             >
               <Image
                 src="/resume.png"
                 alt="Resume"
-                width={50}
-                height={50}
+                width={56}
+                height={56}
                 className="object-contain"
               />
             </a>
-          </div>
-          <div className="lg:col-span-2 bg-neutral-800 rounded-3xl p-8 flex items-center justify-center">
-            <Image
-              src="/mail.png"
-              alt="Mail"
-              width={50}
-              height={50}
-              className="opacity-80"
-            />
+
+            <div className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square">
+              <Image
+                src="/mail.png"
+                alt="Mail"
+                width={56}
+                height={56}
+                className="object-contain opacity-80"
+              />
+            </div>
           </div>
 
+          {/* RIGHT HERO */}
+          <div className="lg:col-span-5 lg:row-span-2 bg-neutral-800 rounded-3xl p-7 relative overflow-hidden h-full flex flex-col justify-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-orange-400">
+              Building Skills
+              For Future.
+            </h1>
+          </div>
 
           {/* PROJECTS */}
           <div className="lg:col-start-4 lg:col-span-9 lg:row-start-3 bg-neutral-800 rounded-3xl p-8">
