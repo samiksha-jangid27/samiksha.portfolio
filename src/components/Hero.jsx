@@ -61,8 +61,8 @@ export default function Hero() {
                       onClick={() =>
                         setActiveSkill(activeSkill === skill.alt ? null : skill.alt)
                       }
-                      className={`p-1 rounded-md transform transition-transform duration-500 ${
-                        activeSkill === skill.alt ? "rotate-180" : ""
+                      className={`p-1 rounded-md transform transition-all duration-300 hover:scale-105 hover:rotate-12 ${
+                        activeSkill === skill.alt ? "rotate-180 scale-105" : ""
                       }`}
                       aria-pressed={activeSkill === skill.alt}
                     >
@@ -105,50 +105,67 @@ export default function Hero() {
           </div>
 
           <div className="lg:col-span-4 lg:row-span-2 grid grid-cols-2 grid-rows-2 gap-2 h-full">
-            <div className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square h-full">
-              <Image
-                src="/githubb.png"
-                alt="GitHub"
-                width={56}
-                height={56}
-                className="object-contain opacity-80"
-              />
-            </div>
+              <a
+                href="https://github.com/samiksha-jangid27"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open GitHub"
+                className="block bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square h-full transform transition-all duration-200 filter hover:-translate-y-2 hover:brightness-110 active:scale-95"
+              >
+                <Image
+                  src="/githubb.png"
+                  alt="GitHub"
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                />
+              </a>
 
-            <div className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square h-full">
-              <Image
-                src="/linkedin.png"
-                alt="LinkedIn"
-                width={56}
-                height={56}
-                className="object-contain opacity-80"
-              />
-            </div>
+              <a
+                href="https://www.linkedin.com/in/samiksha-jangid-a30380325/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LinkedIn"
+                className="block bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square h-full transform transition-all duration-200 filter hover:-translate-y-2 hover:brightness-110 active:scale-95"
+              >
+                <Image
+                  src="/linkedin.png"
+                  alt="LinkedIn"
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                />
+              </a>
 
-            <a
-              href="/resume.pdf"
-              download="Samiksha_Jangid_Resume.pdf"
-              className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square h-full hover:opacity-90 transition"
-            >
-              <Image
-                src="/resume.png"
-                alt="Resume"
-                width={56}
-                height={56}
-                className="object-contain"
-              />
-            </a>
+              <a
+                href="/resume.pdf"
+                download="Samiksha_Jangid_Resume.pdf"
+                aria-label="Download Resume"
+                className="block bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square h-full transform transition-all duration-200 filter hover:-translate-y-2 hover:brightness-110 active:scale-95"
+              >
+                <Image
+                  src="/resume.png"
+                  alt="Resume"
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                />
+              </a>
 
-            <div className="bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square h-full">
-              <Image
-                src="/mail.png"
-                alt="Mail"
-                width={56}
-                height={56}
-                className="object-contain opacity-80"
-              />
+              <a
+                href="mailto:samikshajangid30@gmail.com"
+                aria-label="Send Email"
+                className="block bg-neutral-800 rounded-3xl p-8 flex items-center justify-center aspect-square h-full transform transition-all duration-200 filter hover:-translate-y-2 hover:brightness-110 active:scale-95"
+              >
+                <Image
+                  src="/mail.png"
+                  alt="Mail"
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                />
+              </a>
             </div>
-          </div>
 
           <div className="lg:col-span-5 lg:row-span-2 bg-neutral-800 rounded-3xl p-7 relative overflow-hidden h-full flex flex-col justify-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-orange-400">
