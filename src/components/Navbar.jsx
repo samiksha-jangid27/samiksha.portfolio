@@ -1,8 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const navItems = ["Home", "About", "Work", "Contact"];
+const navItems = ["Home", "About", "Projects", "Contact"];
+
+function hrefFor(item) {
+  if (item === "Home") return "/";
+  if (item === "Projects") return "/work";
+  if (item === "About") return "/#about";
+  if (item === "Contact") return "/#contact";
+  return "/";
+}
 
 export default function Navbar() {
   return (
@@ -15,9 +24,12 @@ export default function Navbar() {
               key={item}
               initial={{ opacity: 0.6 }}
               whileHover={{ opacity: 1 }}
-              className="relative cursor-pointer"
+              className="relative"
             >
-              {item}
+              <Link href={hrefFor(item)} className="cursor-pointer">
+                {item}
+              </Link>
+
               <motion.span
                 layoutId="underline"
                 className="absolute left-0 -bottom-1 h-px w-full bg-white"
