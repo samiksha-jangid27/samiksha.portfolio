@@ -92,8 +92,8 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: index * 0.05 }}
                   >
                     <motion.div
-                      className="p-1 rounded-md transform transition-all duration-300 hover:scale-110 hover:rotate-12"
-                      whileHover={{ rotate: 12, scale: 1.1 }}
+                      className="p-1 rounded-md transform transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-md hover:shadow-orange-500/30"
+                      whileHover={{ rotate: 12, scale: 1.1, boxShadow: "0 0 20px rgba(249, 115, 22, 0.3)" }}
                     >
                       <Image
                         src={skill.src}
@@ -150,7 +150,7 @@ export default function Hero() {
                 rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
                 download={item.download}
                 aria-label={`Open ${item.alt}`}
-                className="block bg-neutral-800 rounded-3xl p-3 flex items-center justify-center aspect-square h-full transform transition-all duration-300 filter hover:-translate-y-3 hover:brightness-125 hover:shadow-lg active:scale-95"
+                className="block bg-neutral-800 rounded-3xl p-3 flex items-center justify-center aspect-square h-full transform transition-all duration-300 filter hover:-translate-y-3 hover:brightness-125 hover:shadow-lg hover:shadow-orange-500/20 active:scale-95"
                 whileHover={{ y: -8, brightness: 1.25 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -179,6 +179,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
+              whileHover={{ scale: 1.02, textShadow: "0 0 20px rgba(249, 115, 22, 0.5)" }}
             >
               Building Skills
               <br />
@@ -213,7 +214,7 @@ export default function Hero() {
                 >
                   <Link
                     href="/work"
-                    className="group block bg-neutral-900 rounded-2xl overflow-hidden hover:scale-[1.03] transition-all duration-300"
+                    className="group block bg-neutral-900 rounded-2xl overflow-hidden hover:scale-[1.03] transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20"
                   >
                     <div className="relative w-full aspect-video overflow-hidden bg-neutral-800">
                       <Image
