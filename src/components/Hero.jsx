@@ -40,8 +40,30 @@ export default function Hero() {
             <div className="bg-neutral-800 rounded-2xl p-8">
               <p className="text-gray-500 text-xs mb-1">A Web Developer</p>
               <h2 className="text-white text-3xl font-bold leading-tight">
-                Samiksha<br />Jangid
+                <span className="block">
+                  {"Samiksha".split("").map((char, i) => (
+                    <span
+                      key={i}
+                      className="transition-colors duration-200 hover:text-orange-400 cursor-default"
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
+
+                <span className="block">
+                  {"Jangid".split("").map((char, i) => (
+                    <span
+                      key={i}
+                      className="transition-colors duration-200 hover:text-orange-400 cursor-default"
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
               </h2>
+
+
               <p className="text-gray-400 text-s italic mt-2">
                 a BTech CS & AI student building things on the web —
                 websites, apps, and whatever feels fun to create...
@@ -51,9 +73,20 @@ export default function Hero() {
             <div className="bg-neutral-800 rounded-2xl p-7 flex flex-col justify-between flex-1">
               <div className="grid grid-cols-3 gap-1.5 justify-items-center">
                 {skills.map((skill) => (
-                  <div key={skill.alt} className="group flex flex-col items-center">
-                    <Image src={skill.src} alt={skill.alt} width={40} height={40} />
-                    <span className="text-[10px] text-gray-400 mt-1 opacity-0 group-hover:opacity-100 transition">
+                  <div
+                    key={skill.alt}
+                    className="group flex flex-col items-center"
+                  >
+                    <div className="transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-6 group-hover:drop-shadow-[0_4px_12px_rgba(255,255,255,0.15)]">
+                      <Image
+                        src={skill.src}
+                        alt={skill.alt}
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+
+                    <span className="text-[10px] text-gray-400 mt-1 opacity-0 group-hover:opacity-100 transition duration-200">
                       {skill.alt}
                     </span>
                   </div>
@@ -95,10 +128,10 @@ export default function Hero() {
 
           {/* Hero Text */}
           <div className="lg:col-span-5 lg:row-span-2 bg-neutral-800 rounded-2xl p-4 flex flex-col justify-center">
-            <h1 className="text-[42px] font-bold leading-tight text-orange-400">
+            <h1 className="text-[50px] font-bold leading-tight text-orange-400">
               Building Skills<br />For Future.
             </h1>
-            <p className="text-gray-400 text-sm mt-2">
+            <p className="text-gray-400 text-l mt-2">
               Exploring new technologies and frameworks to stay ahead.
             </p>
           </div>
@@ -118,10 +151,17 @@ export default function Hero() {
                   className="bg-neutral-900 rounded-xl overflow-hidden hover:scale-[1.02] transition"
                 >
                   <div className="relative aspect-video">
-                    <Image src={project.image} alt={project.title} fill className="object-cover" />
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div className="p-2">
-                    <h4 className="text-white text-sm font-medium">{project.title}</h4>
+                    <h4 className="text-white text-sm font-medium">
+                      {project.title}
+                    </h4>
                     <p className="text-gray-400 text-xs">See details →</p>
                   </div>
                 </Link>
