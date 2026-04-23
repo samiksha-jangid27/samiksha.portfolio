@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   const skills = [
@@ -17,80 +16,102 @@ export default function Hero() {
     { src: "/js.png", alt: "JavaScript" },
     { src: "/next_js.png", alt: "Next.js" },
     { src: "/tailwindcss.png", alt: "Tailwind CSS" },
-    { src: "/prisma.png", alt: "Prisma" },
+    { src: "/prisma.png", alt: "Prisma" }
   ];
 
   const projects = [
-    { title: "Portfolio Website", image: "/project1.png" },
-    { title: "AI Chat App", image: "/project2.png" },
+    {
+      title: "Portfolio Website",
+      image: "/project1.png",
+    },
+    {
+      title: "AI Chat App",
+      image: "/project2.png",
+    },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
-  };
-
   return (
-    <section className="w-full min-h-[100vh] flex items-center justify-center pt-28 pb-12 px-4" id="home">
-      <div className="max-w-5xl mx-auto w-full">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-[180px_180px_auto] gap-4 w-full"
-        >
-          {/* Identity Card */}
-          <motion.div variants={itemVariants} className="lg:col-span-4 lg:row-span-2 glass rounded-3xl p-8 flex flex-col relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="z-10 relative h-full flex flex-col justify-between">
-              <div>
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="inline-block px-3 py-1 bg-surface border border-white/5 rounded-full mb-4"
-                >
-                  <p className="text-gray-400 text-xs font-medium uppercase tracking-wider">Web Developer</p>
-                </motion.div>
-                
-                <h2 className="text-white text-4xl font-bold leading-tight tracking-tight mb-2">
-                  <span className="block">Samiksha</span>
-                  <span className="block text-primary">Jangid</span>
+    <section className="w-full min-h-[calc(100vh-80px)] px-4 py-4">
+      <div className="max-w-5xl mx-auto w-full flex justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-[170px_170px_1fr] gap-2 w-full lg:scale-[0.95] origin-top">
+
+          {/* Left Column */}
+          <div className="lg:col-span-3 lg:row-span-3 flex flex-col gap-2">
+            <div className="bg-neutral-800 rounded-2xl p-8">
+              <p className="text-gray-500 text-xs mb-1">A Web Developer</p>
+              <h2 className="text-white text-3xl font-bold leading-tight">
+                <span className="block">
+                  {"Samiksha".split("").map((char, i) => (
+                    <span
+                      key={i}
+                      className="transition-colors duration-200 hover:text-orange-400 cursor-default"
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
+
+                <span className="block">
+                  {"Jangid".split("").map((char, i) => (
+                    <span
+                      key={i}
+                      className="transition-colors duration-200 hover:text-orange-400 cursor-default"
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
                 </h2>
-              </div>
-              <p className="text-gray-400 text-sm leading-relaxed mt-4">
-                A BTech CS & AI student building digital experiences — web apps, interfaces, and anything that demands creativity.
+
+
+              <p className="text-gray-400 text-s italic mt-2">
+                a BTech CS & AI student building things on the web —
+                websites, apps, and whatever feels fun to create...
               </p>
             </div>
-          </motion.div>
 
-          {/* Headline Card */}
-          <motion.div variants={itemVariants} className="lg:col-span-5 lg:row-span-1 glass rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group hover:border-white/10 transition-colors">
-             <div className="absolute top-0 right-0 p-6 opacity-10 blur-xl">
-               <div className="w-32 h-32 bg-primary rounded-full"></div>
+            <div className="bg-neutral-800 rounded-2xl p-7 flex flex-col justify-between flex-1">
+              <div className="grid grid-cols-3 gap-1.5 justify-items-center">
+                {skills.map((skill) => (
+                  <div
+                    key={skill.alt}
+                    className="group flex flex-col items-center"
+                  >
+                    <div className="transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-6 group-hover:drop-shadow-[0_4px_12px_rgba(255,255,255,0.15)]">
+                      <Image
+                        src={skill.src}
+                        alt={skill.alt}
+                        width={40}
+                        height={40}
+                      />
              </div>
-             <h1 className="text-3xl lg:text-[40px] font-bold leading-[1.1] text-white z-10">
-               Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-300">intelligence</span><br /> into the web.
-             </h1>
-          </motion.div>
 
-          {/* Social Links */}
-          <motion.div variants={itemVariants} className="lg:col-span-3 lg:row-span-1 grid grid-cols-2 grid-rows-2 gap-3">
+                    <span className="text-[10px] text-gray-400 mt-1 opacity-0 group-hover:opacity-100 transition duration-200">
+                      {skill.alt}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex items-center justify-between mt-2">
+                <div>
+                  <p className="text-gray-500 text-xs">Most Used</p>
+                  <h3 className="text-white text-lg font-semibold">Skills</h3>
+                </div>
+                <div className="w-7 h-7 bg-neutral-900 rounded-full flex items-center justify-center">
+                  <span className="text-gray-400">→</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Cards */}
+          <div className="lg:col-span-4 lg:row-span-2 grid grid-cols-2 grid-rows-2 gap-2">
             {[
-              { href: "https://github.com/samiksha-jangid27", src: "/githubb.png", fallback: "GH", name: "GitHub" },
-              { href: "https://www.linkedin.com/in/samiksha-jangid-a30380325/", src: "/linkedin.png", fallback: "IN", name: "LinkedIn" },
-              { href: "/resume.pdf", src: "/resume.png", download: true, fallback: "CV", name: "Resume" },
-              { href: "mailto:samikshajangid30@gmail.com", src: "/mail.png", fallback: "EM", name: "Email" },
+              { href: "https://github.com/samiksha-jangid27", src: "/githubb.png" },
+              { href: "https://www.linkedin.com/in/samiksha-jangid-a30380325/", src: "/linkedin.png" },
+              { href: "/resume.pdf", src: "/resume.png", download: true },
+              { href: "mailto:samikshajangid30@gmail.com", src: "/mail.png" },
             ].map((item, i) => (
               <a
                 key={i}
@@ -98,58 +119,57 @@ export default function Hero() {
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 download={item.download}
-                title={item.name}
-                className="glass rounded-2xl flex items-center justify-center hover:bg-surface-hover hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
+                className="bg-neutral-800 rounded-2xl flex items-center justify-center hover:-translate-y-2 transition"
               >
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300"></div>
-                {/* Simulated Image Fallback if image path fails */}
-                <div className="z-10 bg-white/5 w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md">
-                   <span className="text-xs font-bold text-gray-300">{item.fallback}</span>
-                </div>
+                <Image src={item.src} alt="" width={36} height={36} />
               </a>
             ))}
-          </motion.div>
-
-          {/* Skills Card */}
-          <motion.div variants={itemVariants} className="lg:col-span-3 lg:row-span-1 glass rounded-3xl p-6 flex flex-col justify-between group">
-             <div className="flex items-center justify-between mb-4">
-                <h3 className="text-white text-lg font-semibold">Tech Stack</h3>
-             </div>
-             <div className="flex flex-wrap gap-2 justify-center mt-auto">
-               {skills.slice(0, 8).map((skill) => (
-                 <div key={skill.alt} className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-primary/30 transition-all" title={skill.alt}>
-                    <div className="w-4 h-4 bg-gray-500/50 rounded-sm"></div> {/* Placeholder for actual images */}
                  </div>
-               ))}
-               <div className="w-8 h-8 rounded-full bg-surface border border-white/5 flex items-center justify-center text-xs text-gray-500">+{skills.length - 8}</div>
-             </div>
-          </motion.div>
 
-          {/* Featured Projects Card */}
-          <motion.div variants={itemVariants} className="lg:col-span-5 lg:row-span-1 glass rounded-3xl p-6 flex flex-col relative overflow-hidden">
-            <div className="flex justify-between items-center z-10 mb-6">
-              <h3 className="text-white font-semibold text-lg">Featured Work</h3>
-              <Link href="/work" className="text-primary text-sm hover:underline flex items-center gap-1">
-                View All <span className="text-lg leading-none">↗</span>
-              </Link>
+          {/* Hero Text */}
+          <div className="lg:col-span-5 lg:row-span-2 bg-neutral-800 rounded-2xl p-4 flex flex-col justify-center">
+            <h1 className="text-[50px] font-bold leading-tight text-orange-400">
+              Building Skills<br />For Future.
+            </h1>
+            <p className="text-gray-400 text-l mt-2">
+              Exploring new technologies and frameworks to stay ahead.
+            </p>
+             </div>
+
+          {/* Projects */}
+          <div className="lg:col-start-4 lg:col-span-9 lg:row-start-3 bg-neutral-800 rounded-2xl p-3 flex flex-col">
+            <div className="flex justify-between items-center mb-2">
+              <h3 className="text-white font-semibold text-lg">Projects</h3>
+              <span className="text-gray-500 text-sm">See More →</span>
             </div>
 
-            <div className="flex lg:grid-cols-2 gap-4 flex-1 z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 flex-1">
               {projects.map((project) => (
-                <div key={project.title} className="flex-1 bg-surface border border-white/5 rounded-2xl overflow-hidden group relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <div className="w-full h-full min-h-[100px] bg-neutral-800 relative z-0">
-                       <Image src={project.image} alt={project.title} fill className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
+                <Link
+                  key={project.title}
+                  href="/work"
+                  className="bg-neutral-900 rounded-xl overflow-hidden hover:scale-[1.02] transition"
+                >
+                  <div className="relative aspect-video">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
                     </div>
-                    <div className="absolute bottom-3 left-3 z-20">
-                      <h4 className="text-white text-sm font-medium drop-shadow-md">{project.title}</h4>
-                    </div>
+                  <div className="p-2">
+                    <h4 className="text-white text-sm font-medium">
+                      {project.title}
+                    </h4>
+                    <p className="text-gray-400 text-xs">See details →</p>
                 </div>
+                </Link>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-        </motion.div>
+        </div>
       </div>
     </section>
   );
